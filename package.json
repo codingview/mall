@@ -1,0 +1,23 @@
+{
+  "name": "mall",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "start": "node ./app.js"
+  },
+  "babel": {
+    "presets": [
+      "latest"
+    ]
+  },
+  "script": "./app.js",
+  "devDependencies": {
+    "babel-core": "^6.24.1",
+    "babel-loader": "^7.0.0",
+    "babel-preset-latest": "^6.24.1",
+    "webpack": "^2.4.1"
+  },
+  "dependencies": {
+    "express": "^4.15.2"
+  }
+}
