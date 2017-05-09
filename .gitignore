@@ -3,6 +3,7 @@
 .idea
 
 # .bak
+*.bak
 
 # node_modules
 node_modules/*
