@@ -5,3 +5,6 @@
  */
 
 "use strict";
+
+// GitHub上传前进行检查
+
