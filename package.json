@@ -11,13 +11,15 @@
     ]
   },
   "script": "./app.js",
+  "dependencies": {
+    "express": "^4.15.2",
+    "mysql": "^2.13.0",
+    "sequelize": "^3.30.4"
+  },
   "devDependencies": {
     "babel-core": "^6.24.1",
     "babel-loader": "^7.0.0",
     "babel-preset-latest": "^6.24.1",
     "webpack": "^2.4.1"
-  },
-  "dependencies": {
-    "express": "^4.15.2"
   }
 }
