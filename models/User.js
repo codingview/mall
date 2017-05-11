@@ -14,6 +14,4 @@ module.exports = (DataTypes, callback)=>callback({
     }, name: {
         type: DataTypes.STRING
     }
-}, {
-    freezeTableName: true // Model tableName will be the same as the model name
 });

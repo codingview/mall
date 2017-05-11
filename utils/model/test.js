@@ -15,7 +15,7 @@ const createUser = (callback)=>User(model.Sequelize, (mod)=> callback(model.sequ
 model.sequelize.sync().then(function () {
     return createUser((User)=> {
         User.create({
-            name: '张荣政'
+            name: 'zz'
         });
     });
 }).then(function (data) {

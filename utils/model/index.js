@@ -11,7 +11,14 @@ const Sequelize = require('sequelize')
     , mysql = config.mysql
     ;
 
-const sequelize = new Sequelize(mysql.database, mysql.username, mysql.password, mysql);
+const sequelize = new Sequelize(mysql.database, mysql.username, mysql.password, {
+    dialect:mysql.dialect
+    ,host:mysql.host
+    ,port:mysql.port
+    ,define:{
+
+    }
+});
 
 module.exports = {
     // mysql数据库实例
