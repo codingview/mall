@@ -5,3 +5,10 @@
  */
 
 "use strict";
+
+const _ = {
+    // 启动监听 - 检查 - 服务
+    check: require('./check')
+};
+
+module.exports = _;
