@@ -12,4 +12,4 @@
 
 const _ = {};
 
-module.exports = _;
+module.exports = ()=>{};
