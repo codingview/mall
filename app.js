@@ -52,4 +52,5 @@ app.listen(config.port, ()=> {
         + '  监听端口:' + config.port
         , 'start'
     );
+    require('./service').check();
 });
