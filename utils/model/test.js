@@ -6,4 +6,18 @@
 
 "use strict";
 
-// 实践class的用法
+const model = require('./index');
+
+const User = require('../../models').User;
+
+const createUser = (callback)=>User(model.Sequelize, (mod)=> callback(model.sequelize.define('user', mod)));
+
+model.sequelize.sync().then(function () {
+    return createUser((User)=> {
+        User.create({
+            name: '张荣政'
+        });
+    });
+}).then(function (data) {
+    console.info(data);
+});

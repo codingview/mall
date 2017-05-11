@@ -11,7 +11,9 @@ module.exports = (DataTypes, callback)=>callback({
         type: DataTypes.INTEGER
         , primaryKey: true
         , autoIncrement: true
-    },    name: {
+    }, name: {
         type: DataTypes.STRING
     }
+}, {
+    freezeTableName: true // Model tableName will be the same as the model name
 });
