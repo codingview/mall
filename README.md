@@ -11,7 +11,8 @@
 - 下载源代码：`git clone https://github.com/codingview/mall.git`
 - 安装必备`node-module`：在项目所在目录，执行`npm install`
 - 修改部分配置信息（mysql、redis）
-  - DB相关操作，见[/utils/model](./utils/model)
+  - 配置MySQL : 在 [/config/index.js](./config/index.js) 中修改账号、密码
+  - 初始化MySQL数据库 : DB相关操作，见 [/utils/model](./utils/model)
 - 运行：`node app.js`或`pm2 start app.js`
 
 
