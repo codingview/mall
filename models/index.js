@@ -8,5 +8,5 @@
 
 module.exports = {
     // 用户信息表
-    User: require('./User')
+    user: require('./user')
 };

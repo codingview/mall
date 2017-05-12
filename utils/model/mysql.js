@@ -6,18 +6,19 @@
 
 "use strict";
 
+/* 使用Sequelize实现SQL数据库连接 */
+
 const Sequelize = require('sequelize')
     , config = require('../../config')
     , mysql = config.mysql
     ;
 
 const sequelize = new Sequelize(mysql.database, mysql.username, mysql.password, {
-    dialect:mysql.dialect
-    ,host:mysql.host
-    ,port:mysql.port
-    ,define:{
-
-    }
+    dialect: mysql.dialect
+    , host: mysql.host
+    , port: mysql.port
+    , timezone: "+08:00"
+    , define: {}
 });
 
 module.exports = {

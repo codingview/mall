@@ -6,18 +6,21 @@
 
 "use strict";
 
-const model = require('./index');
+const model = require('./mysql');
 
 const User = require('../../models').User;
 
 const createUser = (callback)=>User(model.Sequelize, (mod)=> callback(model.sequelize.define('user', mod)));
 
-model.sequelize.sync().then(function () {
-    return createUser((User)=> {
-        User.create({
-            name: 'zz'
+model.sequelize
+    .sync()
+    .then(function () {
+        return createUser((User)=> {
+            User.create({
+                name: 'zz'
+            });
         });
+    })
+    .then(function (data) {
+        console.info(data);
     });
-}).then(function (data) {
-    console.info(data);
-});
