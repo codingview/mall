@@ -9,6 +9,9 @@
 const _ = {
     // 启动监听 - 检查 - 服务
     check: require('./check')
+
+    // 权限 - 认证 - 服务
+    , auth: require('./auth')
 };
 
 module.exports = _;
