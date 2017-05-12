@@ -8,7 +8,7 @@
 
 module.exports = {
     // demo表
-    demo: require('./demo')
+    demo: require('./user')
     // 用户信息表
-    , user: require('./user')
+    , user: require('./admin')
 };
