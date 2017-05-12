@@ -7,6 +7,8 @@
 "use strict";
 
 module.exports = {
+    // demo表
+    demo: require('./demo')
     // 用户信息表
-    user: require('./user')
+    , user: require('./user')
 };

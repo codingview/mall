@@ -18,7 +18,10 @@ const sequelize = new Sequelize(mysql.database, mysql.username, mysql.password, 
     , host: mysql.host
     , port: mysql.port
     , timezone: "+08:00"
-    , define: {}
+    , define: {
+        // 字段以 true:下划线（_）来分割（默认是false:驼峰命名风格）
+        underscored: false
+    }
 });
 
 module.exports = {
