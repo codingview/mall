@@ -8,7 +8,11 @@
 
 const _ = {
     development: {
+<<<<<<< Updated upstream
         port: 3000                    // 监听端口
+=======
+        port: 3000                  // 监听端口
+>>>>>>> Stashed changes
         , host: ''                  // 监听host
         , mysql: {
             database: "mall"
