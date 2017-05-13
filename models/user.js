@@ -29,25 +29,25 @@ module.exports = (DataTypes)=>({
             type: DataTypes.STRING(64),
             allowNull: false
         }, img :{
-            type: DataTypes.char(255),
+            type: DataTypes.CHAR(255),
             allowNull: false
         },openid :{
-            type: DataTypes.char(255),
+            type: DataTypes.CHAR(255),
             allowNull: true
         },id : {
-            type: DataTypes.char(255),
+            type: DataTypes.CHAR(255),
             allowNull: false
         },email:{
-            type: DataTypes.char(255),
+            type: DataTypes.CHAR(255),
             allowNull: false
-        },phone{
-            type: DataTypes.char(255),
+        },phone:{
+            type: DataTypes.CHAR(255),
             allowNull: false
         },status:{
-            type: DataTypes.char(255),
+            type: DataTypes.CHAR(255),
             allowNull: false
         },address:{
-            type: DataTypes.char(255),
+            type: DataTypes.CHAR(255),
             allowNull: false
         },scores:{
             type: DataTypes.INTEGER,

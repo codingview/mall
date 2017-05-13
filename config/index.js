@@ -8,17 +8,13 @@
 
 const _ = {
     development: {
-<<<<<<< Updated upstream
-        port: 3000                    // 监听端口
-=======
         port: 3000                  // 监听端口
->>>>>>> Stashed changes
         , host: ''                  // 监听host
         , mysql: {
             database: "mall"
             , host: "127.0.0.1"
             , username: "root"      // 账号
-            , password: "111111"      // 密码
+            , password: "root"    // 密码
             , dialect: "mysql"
         }, redis: {
             host: '192.168.1.101'
