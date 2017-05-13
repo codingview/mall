@@ -14,7 +14,7 @@ const _ = {
             database: "mall"
             , host: "127.0.0.1"
             , username: "root"      // 账号
-            , password: "root"    // 密码
+            , password: "111111"    // 密码
             , dialect: "mysql"
         }, redis: {
             host: '192.168.1.101'

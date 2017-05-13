@@ -6,9 +6,13 @@
 
 "use strict";
 
+/* 表名及表字段均使用驼峰规范 */
+
 module.exports = {
-    // demo表
-    demo: require('./user')
     // 用户信息表
-    , user: require('./admin')
+    user: require('./user')
+    // 管理员信息表
+    , admin: require('./admin')
+    // 修改密码表
+    , resetPwd: require('./resetPwd')
 };

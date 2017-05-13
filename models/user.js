@@ -6,55 +6,48 @@
 
 "use strict";
 
-/* 测试demo实体 */
+/* 用户表 */
 
-/**
- * 表实体
- * @param DataTypes 数据类型，即Sequelize，参见 http://docs.sequelizejs.com/variable/index.html#static-variable-DataTypes
- */
 module.exports = (DataTypes)=>({
     mod: {
         no: {
             type: DataTypes.INTEGER,
-             primaryKey: true,
-             autoIncrement: true
-        }, loginname: {
-            type: DataTypes.STRING,              // 字段类型
-            allowNull: false ,                 // 是否允许为NULL
-            unique: true                      // 字段是否UNIQUE
+            primaryKey: true,
+            autoIncrement: true
+        }, loginName: {
+            type: DataTypes.STRING,
+            allowNull: false,
+            unique: true
         }, nickName: {
             type: DataTypes.CHAR(10),
             allowNull: false
-        }, passwd: {
+        }, password: {
             type: DataTypes.STRING(64),
             allowNull: false
-        }, img :{
+        }, img: {
             type: DataTypes.CHAR(255),
             allowNull: false
-        },openid :{
+        }, openid: {
             type: DataTypes.CHAR(255),
             allowNull: true
-        },id : {
+        }, idCard: {            // 身份证
             type: DataTypes.CHAR(255),
             allowNull: false
-        },email:{
+        }, email: {
             type: DataTypes.CHAR(255),
             allowNull: false
-        },phone:{
+        }, phone: {
             type: DataTypes.CHAR(255),
             allowNull: false
-        },status:{
+        }, status: {
             type: DataTypes.CHAR(255),
             allowNull: false
-        },address:{
+        }, address: {
             type: DataTypes.CHAR(255),
             allowNull: false
-        },scores:{
+        }, scores: {
             type: DataTypes.INTEGER,
             allowNull: false
         }
-    }, option: {                                //xxx 此为默认设置，可以直接不填
-        freezeTableName: true                   // 锁定表名
-        , tableName: 'demo'                     // 表名，不指定表名，则Sequelize会增加复数s
     }
 });

@@ -6,28 +6,30 @@
 
 "use strict";
 
+/* 管理人员表 */
+
 module.exports = (DataTypes)=>({
     mod: {
         no: {
             type: DataTypes.INTEGER
             , primaryKey: true
             , autoIncrement: true
-        }, loginname: {
+        }, loginName: {
             type: DataTypes.STRING,
-            allowNull: false ,
+            allowNull: false,
             unique: true
-        },passwd: {
+        }, password: {
             type: DataTypes.STRING,
-            allowNull: false ,
+            allowNull: false,
             unique: true
-        },nickname: {
+        }, nickname: {
             type: DataTypes.STRING,
-            allowNull: false ,
+            allowNull: false,
             unique: false
-        },img: {
+        }, img: {
             type: DataTypes.STRING,
             allowNull: false
-        },role: {
+        }, role: {
             type: DataTypes.STRING,
             allowNull: false
         }

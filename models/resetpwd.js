@@ -6,22 +6,24 @@
 
 "use strict";
 
+/* 重置密码表 */
+
 module.exports = (DataTypes)=>({
     mod: {
         no: {
             type: DataTypes.INTEGER
             , primaryKey: true
             , autoIncrement: true
-        }, loginname: {
+        }, loginName: {
             type: DataTypes.STRING,
-            allowNull: false ,
+            allowNull: false,
             unique: true
-        },token: {
+        }, token: {
             type: DataTypes.STRING,
-            allowNull: false ,
+            allowNull: false,
             unique: true
-        },createtime: {
-            type: DataTypes.dateFormat,
+        }, createTime: {
+            type: DataTypes.DATE,
             allowNull: false,
             unique: false
         }
