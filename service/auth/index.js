@@ -27,6 +27,11 @@ const _ = {
             return res.redirect('/login');
         }
     }
+
+    // 权限 - 登录 - web
+    ,userLogin:(data,req,callback)=>{
+        //todo 查询db获取用户信息
+    }
 };
 
 module.exports = _;

@@ -17,7 +17,7 @@ const _ = {
             , password: "111111"    // 密码
             , dialect: "mysql"
         }, redis: {
-            host: '192.168.1.101'
+            host: 'localhost'
             , port: 6379
             , db: 6
             , ttl: 86000
