@@ -42,7 +42,7 @@
   "unused": true,
   // -- 忽略以下全局变量
   "predef": [
-    "Mall","global"
+    "GLO","global"
   ],
   /**
    * ---- 版本更新后停用的配置  ----

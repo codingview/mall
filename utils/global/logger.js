@@ -106,7 +106,7 @@ module.exports = {
      * @param info      提示信息，标记该日志打印位置
      */
     , debug: (msg, info = 'INFO:')=> {
-        if (!Mall.isPro()) {
+        if (!GLO.isPro()) {
             logger('debug').info(info + ' ' + typeof msg === 'string' ? msg : JSON.stringify(msg));
         }
     }

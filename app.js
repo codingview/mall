@@ -6,7 +6,7 @@
 
 'use strict';
 
-global.Mall = require('./utils/global');
+global.GLO = require('./utils/global');
 
 //加载modules
 const express = require('express')
@@ -26,7 +26,7 @@ require('events').EventEmitter.defaultMaxListeners = 0;
 const app = express();
 app.set('views', path.join(__dirname, '/views'));
 app.set('view engine', 'ejs');
-app.set('view cache', !Mall.isDev());
+app.set('view cache', !GLO.isDev());
 app.use(serveFavicon(path.join(__dirname, '/public/favicon.ico')));
 app.use(bodyParser.json({limit: '50mb'}));
 app.use(bodyParser.urlencoded({extended: true}));
@@ -46,9 +46,9 @@ app.use('/', require('./routes'));
 
 // 启动app监听
 app.listen(config.port, ()=> {
-    Mall.log(
+    GLO.log(
         'Mall >> Mall - Http服务监听启动'
-        + '  当前环境:' + Mall.ENV
+        + '  当前环境:' + GLO.ENV
         + '  监听端口:' + config.port
         , 'start'
     );

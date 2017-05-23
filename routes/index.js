@@ -8,12 +8,12 @@
 
 const router = require('express').Router()
     , authService = require('../service').auth
-    , mLog = Mall.logger('router')
+    , mLog = GLO.logger('router')
     , log4js = require('../utils/global/logger').log4js;
 
 // 请求日志
 router.use((req, res, next)=> {
-    Mall.http(req);
+    GLO.http(req);
     next();
 });
 
@@ -44,9 +44,9 @@ router.use((err, req, res, next) => {
     res.status(err.status || 500);
     if (err.status !== 404) {
         mLog.error(err);
-        return res.json(Mall.error(err, -99, ''));
+        return res.json(GLO.error(err, -99, ''));
     } else {
-        return res.json(Mall.error(err, 404, '未找到请求地址'));
+        return res.json(GLO.error(err, 404, '未找到请求地址'));
     }
 });
 

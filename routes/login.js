@@ -7,35 +7,51 @@
 "use strict";
 
 const router = require('express').Router()
-    ,authService=require('../service').auth;
+    , authService = require('../service').auth;
 
-// 路由 - 登录 - 页面
-router.get('/', (req, res)=>
-        res.render('./web/login/view', {
-            title: '登录'
-        })
+// 路由 - 登录 - 首页 >> 选择角色
+router.get('/', (req, res)=>res.redirect('/login/role'));
+
+// 路由 - 登录 - 选择角色
+router.get('/role', (req, res)=>
+    res.render('./web/login/role/view')
+);
+
+
+// 路由 - user - 登录 - 页面
+router.get('/user', (req, res)=>
+    res.render('./web/login/user/view', {
+        title: '用户登录'
+    })
+);
+
+// 路由 - admin - 登录 - 页面
+router.get('/admin', (req, res)=>
+    res.render('./web/login/admin/view', {
+        title: '管理员登录'
+    })
 );
 
 // 路由 - 登录 - 接口
 router.post('/', (req, res)=> {
     const body = req.body;
-    let _={    };
-    if('uid' in body&&body.uid){
-        _.username=body.uid;
-    }else{
-        return res.json(Mall.error('请输入用户名',-11));
+    let _ = {};
+    if ('uid' in body && body.uid) {
+        _.username = body.uid;
+    } else {
+        return res.json(GLO.error('请输入用户名', -11));
     }
-    if('upw' in body&&body.upw){
-        _.password=body.upw;
-    }else{
-        return res.json(Mall.error('请输入密码',-21));
+    if ('upw' in body && body.upw) {
+        _.password = body.upw;
+    } else {
+        return res.json(GLO.error('请输入密码', -21));
     }
     // 权限 - 登录
-    authService.userLogin(_,req,(error,result)=>{
-        if(error){
-            return res.json(Mall.error(error,-31));
-        }else{
-            return res.json(Mall.success(result));
+    authService.userLogin(_, req, (error, result)=> {
+        if (error) {
+            return res.json(GLO.error(error, -31));
+        } else {
+            return res.json(GLO.success(result));
         }
     });
 });
