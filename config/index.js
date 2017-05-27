@@ -6,25 +6,13 @@
 
 "use strict";
 
+const ENV=process.env.NODE_ENV || 'development';
+
 const _ = {
     development: {
         port: 3000                  // 监听端口
         , host: ''                  // 监听host
-        , mysql: {
-            database: "mall"
-            , host: "127.0.0.1"
-            , username: "root"      // 账号
-            , password: "111111"    // 密码
-            , dialect: "mysql"
-        }, redis: {
-            host: 'localhost'
-            , port: 6379
-            , db: 6
-            , ttl: 86000
-            , secret: "mall"
-            , key: "mall"
-        }
     }
 };
 
-module.exports = _[process.env.NODE_ENV || 'development'];
+module.exports = _[ENV];
