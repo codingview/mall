@@ -6,8 +6,16 @@
 
 "use strict";
 
-const router = require('express').Router();
+const router = require('express').Router()
+    , authService = require('../../service').auth;
 
+// 管理员 - 页面
+router.use('/admin', require('./admin'));
 
+// 经营者 - 页面
+router.use('/supplier', require('./supplier'));
 
-module.exports=router;
+// 用户 - 页面
+router.use('/user', require('./user'));
+
+module.exports = router;

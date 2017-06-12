@@ -18,27 +18,31 @@ const express = require('express')
     , cookieParser = require('cookie-parser')
     , connectFlash = require('connect-flash')
     , config = require('./config')
+    , redisConfig = require('./config/db')
     ;
 
 require('events').EventEmitter.defaultMaxListeners = 0;
 
 // 创建项目实例
 const app = express();
-app.set('views', path.join(__dirname, '/views'));
-app.set('view engine', 'ejs');
-app.set('view cache', !GLO.isDev());
-app.use(serveFavicon(path.join(__dirname, '/public/favicon.ico')));
-app.use(bodyParser.json({limit: '50mb'}));
-app.use(bodyParser.urlencoded({extended: true}));
-app.use(cookieParser());
-app.use(express.static(path.join(__dirname, 'public')));
-app.use(connectFlash());
+
+app.set('views', path.join(__dirname, '/views'));                           // 设置模板地址
+app.set('view engine', 'ejs');                                              // 设置模板引擎
+app.set('view cache', !GLO.isDev());                                        // 设置模板缓存
+app.use(serveFavicon(path.join(__dirname, '/public/favicon.ico')));         // 设置浏览器图标
+app.use(bodyParser.json({limit: '50mb'}));                                  // 设置body结构体最大值
+app.use(bodyParser.urlencoded({extended: true}));                           // 设置body结构体键值数据类型
+app.use(cookieParser());                                                    // 加载cookie解析中间件
+app.use(express.static(path.join(__dirname, 'public')));                    // 设置静态资源解析地址
+app.use(connectFlash());                                                    // 加载flash中间件
+
 // 配置session，放入redis
 app.use(session({
-    store: new RedisStore(config.redis)
+    store: new RedisStore(redisConfig.redis)
     , resave: false
     , saveUninitialized: true
-    , secret: config.redis.secret
+    , secret: redisConfig.redis.secret
+    , key: redisConfig.redis.key              // key不同，基于redis的session不会出现多系统冲突
 }));
 
 // 加载路由
@@ -52,5 +56,5 @@ app.listen(config.port, ()=> {
         + '  监听端口:' + config.port
         , 'start'
     );
-    require('./service').check();
+    require('./service').check();  // 启动检查
 });

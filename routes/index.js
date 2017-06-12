@@ -37,6 +37,8 @@ router.use('/wbi', authService.wbi, require('./wbi'));
 // todo 路由 - 页面
 router.use('/', authService.web, require('./web'));
 
+// todo 路由 - 404页面
+
 /*jshint unused:false */
 // 系统错误 - 返回
 router.use((err, req, res, next) => {
