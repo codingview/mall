@@ -6,13 +6,10 @@
 
 "use strict";
 
-const ENV=process.env.NODE_ENV || 'development';
-
-const _ = {
-    development: {
-        port: 3000                  // 监听端口
-        , host: ''                  // 监听host
-    }
+const CONFIG = {
+    development: require('./config_development')
+    // , test: require('./config_test')
+    // , production: require('./config_production')
 };
 
-module.exports = _[ENV];
+module.exports = CONFIG[process.env.NODE_ENV || 'development'];

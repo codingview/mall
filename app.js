@@ -18,7 +18,6 @@ const express = require('express')
     , cookieParser = require('cookie-parser')
     , connectFlash = require('connect-flash')
     , config = require('./config')
-    , redisConfig = require('./config/db')
     ;
 
 require('events').EventEmitter.defaultMaxListeners = 0;
@@ -38,11 +37,11 @@ app.use(connectFlash());                                                    // �
 
 // 配置session，放入redis
 app.use(session({
-    store: new RedisStore(redisConfig.redis)
+    store: new RedisStore(config.redis)
     , resave: false
     , saveUninitialized: true
-    , secret: redisConfig.redis.secret
-    , key: redisConfig.redis.key              // key不同，基于redis的session不会出现多系统冲突
+    , secret: config.redis.secret
+    , key: config.redis.key              // key不同，基于redis的session不会出现多系统冲突
 }));
 
 // 加载路由
